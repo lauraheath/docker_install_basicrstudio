@@ -14,6 +14,3 @@ RUN R -e "install.packages('remotes')" \
 && R -e "install.packages('caret')"\
 && R -e "install.packages('data.table')"\
 && R -e "install.packages('ggplot2')"
-
-run mkdir -p /home/lheath/testrun \ 
-&& git clone https://github.com/https://github.com/lauraheath/new_synapser_test.git /home/lheath/testrun
