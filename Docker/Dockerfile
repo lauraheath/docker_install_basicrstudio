@@ -1,7 +1,9 @@
-from rocker/rstudio
-RUN apt-get update && apt-get upgrade -y
-RUN R -e "install.packages(c('remotes', 'reticulate'))"
-RUN R -e "reticulate::install_miniconda()"
+FROM rocker/rstudio:4.2.2
+
+RUN apt-get update -y\
+&& apt-get install -y python3-pip python3.10-venv
+
+RUN R -e "install.packages('remotes')" \
 RUN R -e "remotes::install_github(repo='https://github.com/generalui/synapser/tree/reticulate', ref='reticulate', force=T)"
 
 run mkdir -p /home/lheath/testrun \ 
