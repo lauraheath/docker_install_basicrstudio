@@ -3,7 +3,7 @@ FROM rocker/rstudio:4.2.2
 RUN apt-get update -y\
 && apt-get install -y dpkg-dev zlib1g-dev libssl-dev libffi-dev zlib1g-dev libbz2-dev liblzma-dev build-essential libglpk40\
 && apt-get install -y curl libcurl4-openssl-dev libxml2-dev libcairo2-dev libxt-dev r-cran-cairo libgsl-dev\
-&& apt-get install -y git openssh-client nano less libxt6 libcurl4-openssl-dev
+&& apt-get install -y git openssh-client nano less libxt6 libcurl4-openssl-dev python3-pip
 
 
 RUN R -e "install.packages('remotes')" \
