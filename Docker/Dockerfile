@@ -7,13 +7,13 @@ RUN apt-get update -y\
 
 
 RUN R -e "install.packages('remotes')" \
-&& R -e "install.packages('BiocManager')"\
 && R -e "install.packages('devtools')"\
 && R -e "install.packages('R.utils')"\
 && R -e "install.packages('tidyverse')"\
-&& R -e "install.packages('caret')"\
-&& R -e "install.packages('data.table')"\
 && R -e "install.packages('ggplot2')"
 
-run mkdir -p /home/lheath/testrun \ 
-&& git clone https://github.com/lauraheath/new_synapser_test.git /home/lheath/testrun
+USER rstudio
+
+RUN cd /home/rstudio && git clone https://github.com/lauraheath/docker_install_basicrstudio
+
+USER root
