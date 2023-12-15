@@ -10,7 +10,6 @@ RUN R -e "install.packages('R.utils')"
 RUN R -e "install.packages('tidyverse')"
 RUN R -e "install.packages('ggplot2')"
 RUN R -e "install.packages(c('remotes', 'reticulate'))"
-RUN R -e "install.packages("synapser", repos=c("http://ran.synapse.org", "http://cran.fhcrc.org"))"
 
 USER rstudio
 
